@@ -37,6 +37,8 @@ var io = require('socket.io').listen(http.createServer(app).listen(app.get('port
 
 
 // ----------------------------------------
+// FIXME: use namespace to separate action control and others
+//
 io.sockets.on('connection', function (socket) {
 
    socket.emit('message', { message: 'welcome to the chat' });

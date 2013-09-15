@@ -42,7 +42,6 @@
 
       // receive broadcast messages
       s.on('video play', function (x) {
-         console.log(" -- broadcast msg --", x);
          //var estimatedTimeOnMaster = parseInt(x.time) + 1;
          //if (Math.abs(estimatedTimeOnMaster - v.currentTime) > 5 ) {
          v.currentTime = x.time;
