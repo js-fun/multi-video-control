@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1= title
+
+  #room
+    | User:
+    span(id='username')
+    p
+      | User Count:
+      span(id='userCount')
+      | isControl:
+      span(id='isControl')
+    button(id='takeControl') Take Control
+    p
+      //(controls)
+      video(id='testVideo')
+        source(src='http://www.w3schools.com/html/mov_bbb.mp4', type='video/mp4')
+        | Your browser does not support HTML5 video.
+    p
+      button(id='startOrPause') Start/Pause
+
+block botton-js
+  script(src='/javascripts/client.js')
