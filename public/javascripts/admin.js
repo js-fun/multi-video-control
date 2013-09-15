@@ -28,7 +28,8 @@
       });
 
       v.addEventListener("timeupdate", function() {
-         if (!!global.App.isControl) {
+         //console.log(">> time", v.currentTime);
+         if (!!global.App.isControl && v.currentTime !== 0) {
             s.emit('action playing', {time: v.currentTime});
          }
       }, true);
