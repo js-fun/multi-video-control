@@ -5,7 +5,6 @@
 
 var express = require('express');
 var routes = require('./routes');
-var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
 
@@ -28,7 +27,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/users', user.list);
+app.get('/admin', routes.admin);
 
 
 var io = require('socket.io').listen(http.createServer(app).listen(app.get('port'), function(){
