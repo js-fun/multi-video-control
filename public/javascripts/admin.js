@@ -8,6 +8,19 @@
       var userName = 'user' + parseInt(99999 * Math.random());
       $('#username').text(userName);
 
+      // take control handler
+      var takeControl = function (x) {
+         if (!global.App.isControl) {
+            s.emit('take control', {userName: userName});
+         }
+      };
+      s.on('finish take control', function (data) {
+         global.App.isControl = true;
+         $('#isControl').text('true');
+      });
+
+      takeControl();
+
       // start / pause video
       var v = $('#testVideo')[0];
       $('#startOrPause').click(function (x) {
@@ -26,18 +39,6 @@
          }
       }, true);
 
-      // take control handler
-      var takeControl = function (x) {
-         if (!global.App.isControl) {
-            s.emit('take control', {userName: userName});
-         }
-      };
-      s.on('finish take control', function (data) {
-         global.App.isControl = true;
-         $('#isControl').text('true');
-      });
-
-      takeControl();
 
 
       // debug
