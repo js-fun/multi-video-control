@@ -17,10 +17,10 @@
       });
 
       s.on('video play', function (x) {
-         //var estimatedTimeOnMaster = parseInt(x.time) + 1;
-         //if (Math.abs(estimatedTimeOnMaster - v.currentTime) > 5 ) {
+         var estimatedTimeOnMaster = parseInt(x.time) + 1;
+         if (Math.abs(estimatedTimeOnMaster - v.currentTime) > 5 ) {
          v.currentTime = x.time;
-         //}
+         }
          if (v.paused) {
             v.play();
          }
